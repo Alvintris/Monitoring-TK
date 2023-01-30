@@ -68,7 +68,7 @@ class addmurid extends Controller
           ];
           Murid::insert($data1);
           
-          return redirect('/datmaster-listmurid')->with('status', $nis. ' berhasil ditambahkan');
+          return redirect('/datmaster-listmurid')->with('status', $nip. ' berhasil ditambahkan');
     }
 
     /**

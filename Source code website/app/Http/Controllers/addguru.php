@@ -44,7 +44,7 @@ class addguru extends Controller
         for ($i = 0; $i < count($Guru_array); $i++) {
                 $num++;      
         }
-        $nip = 'P' . str_pad($num, 3, '0', STR_PAD_LEFT);
+        $nip = 'P' . str_pad($num, 3, '0', STR_PAD_LEFT) . rand(1,9);
         $data2 = [
             'username'=> $request->nm . $nip,
             'password'=> $request->nm . $nip,
