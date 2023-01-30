@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 14, 2023 at 04:33 AM
+-- Generation Time: Jan 30, 2023 at 09:05 AM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -37,22 +37,47 @@ CREATE TABLE `buku_penghubung` (
   `Catatan_Guru` text DEFAULT NULL,
   `Main_Course` varchar(100) DEFAULT NULL,
   `Snack` varchar(100) DEFAULT NULL,
-  `Absen` varchar(10) NOT NULL
+  `Status_Mcourse` int(11) DEFAULT NULL,
+  `Status_Snack` int(11) DEFAULT NULL,
+  `Absen` varchar(10) NOT NULL,
+  `Grade` varchar(2) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `buku_penghubung`
 --
 
-INSERT INTO `buku_penghubung` (`ID_Buku`, `ID_Kelas`, `NIS_Murid`, `ID_Pelajaran`, `tanggal`, `Evaluasi_OrangTua`, `Catatan_Guru`, `Main_Course`, `Snack`, `Absen`) VALUES
-('BP20230103M20210014K20200031', 'K20200031', 'M20210014', 'PE002', '2023-01-03', 'Terima kasih', 'Sudah belajar dengan baik', 'Nasi Goreng', 'Kentang Goreng', 'Hadir'),
-('BP20230103M20210025K20200031', 'K20200031', 'M20210025', 'PE002', '2023-01-03', NULL, NULL, 'Nasi Goreng', 'Kentang Goreng', 'Hadir'),
-('BP20230103M20210034K20200031', 'K20200031', 'M20210034', 'PE002', '2023-01-03', NULL, NULL, 'Nasi Goreng', 'Kentang Goreng', 'Hadir'),
-('BP20230103M20210046K20200031', 'K20200031', 'M20210046', 'PE002', '2023-01-03', NULL, NULL, 'Nasi Goreng', 'Kentang Goreng', 'Hadir'),
-('BP20230104M20210014K20200031', 'K20200031', 'M20210014', 'PE002', '2023-01-04', NULL, NULL, 'Nasi Goreng', 'Kentang Goreng', 'Hadir'),
-('BP20230104M20210025K20200031', 'K20200031', 'M20210025', 'PE002', '2023-01-04', NULL, 'Sudah Belajar dengan baik', 'Nasi Goreng', 'Kentang Goreng', 'Hadir'),
-('BP20230104M20210034K20200031', 'K20200031', 'M20210034', 'PE002', '2023-01-04', NULL, NULL, 'Nasi Goreng', 'Kentang Goreng', 'Hadir'),
-('BP20230104M20210046K20200031', 'K20200031', 'M20210046', 'PE002', '2023-01-04', NULL, NULL, 'Nasi Goreng', 'Kentang Goreng', 'Hadir');
+INSERT INTO `buku_penghubung` (`ID_Buku`, `ID_Kelas`, `NIS_Murid`, `ID_Pelajaran`, `tanggal`, `Evaluasi_OrangTua`, `Catatan_Guru`, `Main_Course`, `Snack`, `Status_Mcourse`, `Status_Snack`, `Absen`, `Grade`) VALUES
+('BP20200119M0001K0001', 'K0001', 'M0001', 'PE001', '2020-01-19', NULL, 'Sudah Belajar Dengan Baik', 'Nasi Goreng', 'Keripik Singkong', 1, 1, 'Hadir', 'A'),
+('BP20200119M20190018K0001', 'K0001', 'M20190018', 'PE001', '2020-01-19', NULL, 'Sudah Belajar Dengan Baik', 'Nasi Goreng', 'Keripik Singkong', 1, 1, 'Hadir', 'A'),
+('BP20200119M20190024K0001', 'K0001', 'M20190024', 'PE001', '2020-01-19', NULL, 'Sudah Belajar Dengan Baik', 'Nasi Goreng', 'Keripik Singkong', 1, 1, 'Hadir', 'A'),
+('BP20200119M20190033K0001', 'K0001', 'M20190033', 'PE001', '2020-01-19', NULL, 'Sudah Belajar Dengan Baik', 'Nasi Goreng', 'Keripik Singkong', 1, 1, 'Hadir', 'A'),
+('BP20200119M20190049K0001', 'K0001', 'M20190049', 'PE001', '2020-01-19', NULL, 'Sudah Belajar Dengan Baik', 'Nasi Goreng', 'Keripik Singkong', 1, 1, 'Hadir', 'A'),
+('BP20200120M0001K0001', 'K0001', 'M0001', 'PE004', '2020-01-20', NULL, 'Semoga lekas sembuh', 'Nasi Kuning', 'Kentang Goreng', -1, -1, 'Sakit', 'C'),
+('BP20200120M20190018K0001', 'K0001', 'M20190018', 'PE004', '2020-01-20', NULL, 'Semoga besok sudah bisa masuk', 'Nasi Kuning', 'Kentang Goreng', -1, -1, 'Izin', 'C'),
+('BP20200120M20190024K0001', 'K0001', 'M20190024', 'PE004', '2020-01-20', NULL, 'Sudah Belajar Dengan Baik', 'Nasi Kuning', 'Kentang Goreng', 1, 1, 'Hadir', 'A'),
+('BP20200120M20190033K0001', 'K0001', 'M20190033', 'PE004', '2020-01-20', NULL, 'Sudah Belajar Dengan Baik', 'Nasi Kuning', 'Kentang Goreng', 1, 1, 'Hadir', 'A'),
+('BP20200120M20190049K0001', 'K0001', 'M20190049', 'PE004', '2020-01-20', NULL, 'Sudah Belajar Dengan Baik', 'Nasi Kuning', 'Kentang Goreng', 1, 1, 'Hadir', 'A'),
+('BP20200121M0001K0001', 'K0001', 'M0001', 'PE003', '2020-01-21', NULL, 'Semoga besok sudah bisa masuk', 'Nasi Uduk', 'Sosis Goreng', -1, -1, 'Izin', 'C'),
+('BP20200121M20190018K0001', 'K0001', 'M20190018', 'PE003', '2020-01-21', NULL, 'Semoga lekas sembuh', 'Nasi Uduk', 'Sosis Goreng', -1, -1, 'Sakit', 'C'),
+('BP20200121M20190024K0001', 'K0001', 'M20190024', 'PE003', '2020-01-21', NULL, 'Sudah Belajar Dengan Baik', 'Nasi Uduk', 'Sosis Goreng', 1, 1, 'Hadir', 'A'),
+('BP20200121M20190033K0001', 'K0001', 'M20190033', 'PE003', '2020-01-21', NULL, 'Semoga besok sudah bisa masuk', 'Nasi Uduk', 'Sosis Goreng', -1, -1, 'Izin', 'C'),
+('BP20200121M20190049K0001', 'K0001', 'M20190049', 'PE003', '2020-01-21', NULL, 'Sudah Belajar Dengan Baik', 'Nasi Uduk', 'Sosis Goreng', 1, 1, 'Hadir', 'A'),
+('BP20200119M20190058K20190031', 'K20190031', 'M20190058', 'PE004', '2020-01-19', NULL, 'Sudah belajar dengan baik', 'Nasi Goreng', 'Keripik Singkong', 1, 1, 'Hadir', 'A'),
+('BP20200119M20190067K20190031', 'K20190031', 'M20190067', 'PE004', '2020-01-19', NULL, 'Sudah belajar dengan baik', 'Nasi Goreng', 'Keripik Singkong', 1, 1, 'Hadir', 'A'),
+('BP20200119M20190077K20190031', 'K20190031', 'M20190077', 'PE004', '2020-01-19', NULL, 'Sudah belajar dengan baik', 'Nasi Goreng', 'Keripik Singkong', 1, 1, 'Hadir', 'A'),
+('BP20200119M20190085K20190031', 'K20190031', 'M20190085', 'PE004', '2020-01-19', NULL, 'Sudah belajar dengan baik', 'Nasi Goreng', 'Keripik Singkong', 1, 1, 'Hadir', 'A'),
+('BP20200119M20190092K20190031', 'K20190031', 'M20190092', 'PE004', '2020-01-19', NULL, 'Sudah belajar dengan baik', 'Nasi Goreng', 'Keripik Singkong', 1, 1, 'Hadir', 'A'),
+('BP20200120M20190058K20190031', 'K20190031', 'M20190058', 'PE002', '2020-01-20', NULL, 'Sudah belajar dengan baik', 'Nasi Kuning', 'Kentang Goreng', 1, 1, 'Hadir', 'A'),
+('BP20200120M20190067K20190031', 'K20190031', 'M20190067', 'PE002', '2020-01-20', NULL, 'Semoga lekas sembuh', 'Nasi Kuning', 'Kentang Goreng', -1, -1, 'Sakit', 'C'),
+('BP20200120M20190077K20190031', 'K20190031', 'M20190077', 'PE002', '2020-01-20', NULL, 'Semoga lekas sembuh', 'Nasi Kuning', 'Kentang Goreng', -1, -1, 'Sakit', 'C'),
+('BP20200120M20190085K20190031', 'K20190031', 'M20190085', 'PE002', '2020-01-20', NULL, 'Sudah belajar dengan baik', 'Nasi Kuning', 'Kentang Goreng', 1, 1, 'Hadir', 'A'),
+('BP20200120M20190092K20190031', 'K20190031', 'M20190092', 'PE002', '2020-01-20', NULL, 'Kenapa hari ini tidak masuk?', 'Nasi Kuning', 'Kentang Goreng', -1, -1, 'Alpa', 'C'),
+('BP20200121M20190058K20190031', 'K20190031', 'M20190058', 'PE005', '2020-01-21', NULL, 'Semoga lekas sembuh', 'Nasi Uduk', 'Sosis Goreng', -1, -1, 'Sakit', 'C'),
+('BP20200121M20190067K20190031', 'K20190031', 'M20190067', 'PE005', '2020-01-21', NULL, 'Sudah belajar dengan baik', 'Nasi Uduk', 'Sosis Goreng', 1, 1, 'Hadir', 'A'),
+('BP20200121M20190077K20190031', 'K20190031', 'M20190077', 'PE005', '2020-01-21', NULL, 'Semoga lekas sembuh', 'Nasi Uduk', 'Sosis Goreng', -1, -1, 'Sakit', 'C'),
+('BP20200121M20190085K20190031', 'K20190031', 'M20190085', 'PE005', '2020-01-21', NULL, 'Semoga besok sudah bisa masuk', 'Nasi Uduk', 'Sosis Goreng', -1, -1, 'Izin', 'C'),
+('BP20200121M20190092K20190031', 'K20190031', 'M20190092', 'PE005', '2020-01-21', NULL, 'Sudah belajar dengan baik', 'Nasi Uduk', 'Sosis Goreng', 1, 1, 'Hadir', 'A');
 
 -- --------------------------------------------------------
 
@@ -73,16 +98,16 @@ CREATE TABLE `kelas` (
 --
 
 INSERT INTO `kelas` (`ID_Kelas`, `NIP_Pengajar`, `Tingkat_Kelas`, `Nama_Kelas`, `Tahun_Masuk`) VALUES
-('K0001', 'P001', 'Nol Kecil', 'A-1', 2022),
-('K0002', 'P002', 'Nol Besar', 'B-1', 2021),
-('K20200031', 'P003', 'Nol Kecil', 'A-2', 2020),
-('K20200044', 'P004', 'Nol Kecil', 'A-3', 2020),
-('K20200052', 'P005', 'Nol Besar', 'B-2', 2020),
-('K20200062', 'P006', 'Nol Besar', 'B-3', 2020),
-('K20200072', 'P007', 'Nol Kecil', 'C-1', 2020),
-('K20200089', 'P008', 'Nol Kecil', 'C-2', 2020),
-('K20200091', 'P009', 'Nol Besar', 'C-3', 2020),
-('K20200104', 'P010', 'Nol Besar', 'C-4', 2020);
+('K0001', 'P001', 'Nol Kecil', 'A-1', 2019),
+('K20200025', 'P002', 'Nol Besar', 'A-2', 2020),
+('K20190031', 'P003', 'Nol Kecil', 'B-1', 2019),
+('K20200042', 'P004', 'Nol Besar', 'B-2', 2020),
+('K20190059', 'P005', 'Nol Kecil', 'C-1', 2019),
+('K20200065', 'P006', 'Nol Besar', 'C-2', 2020),
+('K20190076', 'P007', 'Nol Kecil', 'D-1', 2019),
+('K20200087', 'P008', 'Nol Besar', 'D-2', 2020),
+('K20190092', 'P009', 'Nol Kecil', 'E-1', 2019),
+('K20200105', 'P010', 'Nol Besar', 'E-2', 2020);
 
 -- --------------------------------------------------------
 
@@ -105,28 +130,62 @@ CREATE TABLE `murid` (
 --
 
 INSERT INTO `murid` (`NIS_Murid`, `username`, `ID_Kelas`, `Nama_Murid`, `Nama_OrangTua`, `Jenis_Kelamin`, `Tanggal_Lahir`) VALUES
-('M0001', 'karenM0001', 'K0001', 'Karen', 'Budi', 'Laki-Laki', '2017-01-03'),
-('M0002', 'AndiM0002', 'K0001', 'Andi', 'Luna', 'Laki-Laki', '2017-03-02'),
-('M20200018', 'DanielM20200018', 'K0001', 'Daniel', 'Damon', 'Laki-laki', '2016-03-01'),
-('M20200026', 'KarinaM20200026', 'K0001', 'Karina', 'Estes', 'Perempuan', '2016-06-16'),
-('M20200036', 'NataliaM20200036', 'K0001', 'Natalia', 'Oliver', 'Perempuan', '2017-10-05'),
-('M20200041', 'OmenM20200041', 'K0002', 'Omen', 'Andi', 'Laki-laki', '2016-03-27'),
-('M20200053', 'NevanM20200053', 'K0002', 'Nevan', 'Karen', 'Laki-laki', '2017-01-23'),
-('M20200061', 'JesseM20200061', 'K0002', 'Jesse', 'Dina', 'Perempuan', '2017-03-11'),
-('M20200075', 'JadeM20200075', 'K0002', 'Jade', 'Udin', 'Perempuan', '2017-06-18'),
-('M20200097', 'UdinM20200097', 'K20200052', 'Udin', 'Doni', 'Laki-laki', '2016-09-20'),
-('M20200108', 'IreneM20200108', 'K20200052', 'Irene', 'Dimas', 'Perempuan', '2016-05-15'),
-('M20200116', 'DodiM20200116', 'K20200052', 'Dodi', 'Thor', 'Laki-laki', '2016-02-09'),
-('M20200123', 'UdinM20200123', 'K0001', 'Udin', 'Oliver', 'Laki-laki', '2017-02-02'),
-('M20200136', 'GinaM20200136', 'K20200052', 'Gina', 'Andi', 'Perempuan', '2017-02-01'),
-('M20200141', 'CarlaM20200141', 'K20200089', 'Carla', 'Damon', 'Perempuan', '2017-10-10'),
-('M20210014', 'CarlaM20210014', 'K20200031', 'Carla', 'Blue', 'Perempuan', '2018-06-13'),
-('M20210025', 'JasonM20210025', 'K20200031', 'Jason', 'James', 'Laki-laki', '2017-07-31'),
-('M20210034', 'JohnM20210034', 'K20200031', 'John', 'Reedman', 'Laki-laki', '2018-10-29'),
-('M20210046', 'MirandaM20210046', 'K20200031', 'Miranda', 'Flower', 'Perempuan', '2018-08-30'),
-('M20210055', 'DonaldM20210055', 'K20200044', 'Donald', 'Cordle', 'Laki-laki', '2017-08-14'),
-('M20210066', 'LilianaM20210066', 'K20200044', 'Liliana', 'Brim', 'Perempuan', '2017-06-27'),
-('M20210077', 'PeteM20210077', 'K20200044', 'Pete', 'Andi', 'Laki-laki', '2018-04-11');
+('M0001', 'ZalindraM0001', 'K0001', 'Zalindra', 'Lailasari', 'Perempuan', '2015-03-19'),
+('M20190018', 'AyuM20190018', 'K0001', 'Ayu', 'Yuniar', 'Perempuan', '2015-02-25'),
+('M20190024', 'MichelleM20190024', 'K0001', 'Michelle', 'Fujiati', 'Perempuan', '2015-08-15'),
+('M20190033', 'KardiM20190033', 'K0001', 'Kardi', 'Natsir', 'Laki-laki', '2015-09-26'),
+('M20190049', 'IkaM20190049', 'K0001', 'Ika', 'Uyainah', 'Perempuan', '2015-06-05'),
+('M20200016', 'JarwaM20200016', 'K20200025', 'Jarwa', 'Nainggolan', 'Laki-laki', '2014-08-05'),
+('M20200029', 'ZeldaM20200029', 'K20200025', 'Zelda', 'Wahyuni', 'Perempuan', '2014-06-01'),
+('M20200034', 'UlvaM20200034', 'K20200025', 'Ulva', 'Susanti', 'Perempuan', '2014-11-27'),
+('M20200049', 'JaswadiM20200049', 'K20200025', 'Jaswadi', 'Prasetya', 'Laki-laki', '2014-09-07'),
+('M20200054', 'ZulfaM20200054', 'K20200025', 'Zulfa', 'Nasyiah', 'Perempuan', '2014-04-11'),
+('M20190058', 'PrasetyaM20190058', 'K20190031', 'Prasetya', 'Sirait', 'Laki-laki', '2014-04-10'),
+('M20190067', 'FarhunnisaM20190067', 'K20190031', 'Farhunnisa', 'Lestari', 'Perempuan', '2015-01-23'),
+('M20190077', 'AjimatM20190077', 'K20190031', 'Ajimat', 'Pranowo', 'Laki-laki', '2016-08-05'),
+('M20190085', 'YonoM20190085', 'K20190031', 'Yono', 'Tarihoran', 'Laki-laki', '2016-10-06'),
+('M20190092', 'HafshahM20190092', 'K20190031', 'Hafshah', 'Zulaika', 'Perempuan', '2015-11-20');
+
+-- --------------------------------------------------------
+
+--
+-- Stand-in structure for view `murid_terbaik`
+-- (See below for the actual view)
+--
+CREATE TABLE `murid_terbaik` (
+`NIS_Murid` varchar(100)
+,`Nama_Murid` varchar(100)
+,`Total_A` bigint(21)
+);
+
+-- --------------------------------------------------------
+
+--
+-- Stand-in structure for view `murid_terburuk`
+-- (See below for the actual view)
+--
+CREATE TABLE `murid_terburuk` (
+`NIS_Murid` varchar(100)
+,`Nama_Murid` varchar(100)
+,`Total_C` bigint(21)
+);
+
+-- --------------------------------------------------------
+
+--
+-- Stand-in structure for view `murid_termuda_tertua`
+-- (See below for the actual view)
+--
+CREATE TABLE `murid_termuda_tertua` (
+`NIS_Murid` varchar(100)
+,`username` varchar(100)
+,`ID_Kelas` varchar(100)
+,`Nama_Murid` varchar(100)
+,`Nama_OrangTua` varchar(100)
+,`Jenis_Kelamin` varchar(10)
+,`Tanggal_Lahir` date
+,`umur` int(6)
+);
 
 -- --------------------------------------------------------
 
@@ -170,17 +229,27 @@ CREATE TABLE `pengajar` (
 --
 
 INSERT INTO `pengajar` (`NIP_Pengajar`, `Username`, `Nama_Pengajar`, `Jenis_Kelamin`, `NO_Telepon`) VALUES
-('P001', 'gustiP001', 'Gusti', 'Laki-Laki', '812555738192'),
-('P002', 'DianP002', 'Dian', 'Perempuan', '812532734192'),
-('P003', 'BaimP003', 'Baim', 'Laki-laki', '089520433824'),
-('P004', 'DaffaP004', 'Daffa', 'Perempuan', '084722409406'),
-('P005', 'DhiaP005', 'Dhia', 'Perempuan', '082983177007'),
-('P006', 'RenataP006', 'Renata', 'Perempuan', '082806188612'),
-('P007', 'KevinP007', 'Kevin', 'Laki-laki', '083594534197'),
-('P008', 'DyvanoP008', 'Dyvano', 'Laki-laki', '087025825588'),
-('P009', 'DenitoP009', 'Denito', 'Laki-laki', '088457219562'),
-('P010', 'KathP010', 'Kath', 'Perempuan', '085769288996'),
-('P011', 'DoniP011', 'Doni', 'Laki-laki', '1234567890098');
+('P001', 'DianP001', 'Dian', 'Perempuan', '021 4214 6394'),
+('P002', 'EkoP002', 'Eko', 'Laki-laki', '(+62) 867 795 551'),
+('P003', 'CayadiP003', 'Cayadi', 'Laki-laki', '(+62) 625 4771 600'),
+('P004', 'NoviP004', 'Novi', 'Perempuan', '(+62) 23 2948 6552'),
+('P005', 'HariP005', 'Hari', 'Laki-laki', '(+62) 427 6157 9299'),
+('P006', 'AgnesP006', 'Agnes', 'Perempuan', '(+62) 823 2956 7241'),
+('P007', 'ZahraP007', 'Zahra', 'Perempuan', '(+62) 206 5963 7956'),
+('P008', 'RaditP008', 'Radit', 'Laki-laki', '(+62) 844 0323 5756'),
+('P009', 'VictoriaP009', 'Victoria', 'Perempuan', '(+62) 821 8611 5684'),
+('P010', 'GambiraP010', 'Gambira', 'Laki-laki', '0336 2686 141');
+
+-- --------------------------------------------------------
+
+--
+-- Stand-in structure for view `total_jk_pengajar`
+-- (See below for the actual view)
+--
+CREATE TABLE `total_jk_pengajar` (
+`Jenis_Kelamin` varchar(10)
+,`Total` bigint(21)
+);
 
 -- --------------------------------------------------------
 
@@ -199,118 +268,69 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`username`, `password`, `role`) VALUES
-('AndiM0002', 'AndiM0002', 'Murid'),
-('BaimP003', 'BaimP003', 'Pengajar'),
-('CarlaM20200141', 'CarlaM20200141', 'Murid'),
-('CarlaM20210014', 'CarlaM20210014', 'Murid'),
-('DaffaP004', 'DaffaP004', 'Pengajar'),
-('DanielM20200018', 'DanielM20200018', 'Murid'),
-('DenitoP009', 'Denito12345', 'Pengajar'),
-('DhiaP005', 'DhiaP005', 'Pengajar'),
-('DianP002', 'DianP002', 'Pengajar'),
-('DodiM20200116', 'DodiM20200116', 'Murid'),
-('DonaldM20210055', 'DonaldM20210055', 'Murid'),
-('DoniP011', 'DoniP011', 'Pengajar'),
-('DyvanoP008', 'DyvanoP008', 'Pengajar'),
-('GinaM20200136', 'GinaM20200136', 'Murid'),
-('gustiP001', '123456', 'Pengajar'),
-('IreneM20200108', 'IreneM20200108', 'Murid'),
-('JadeM20200075', 'JadeM20200075', 'Murid'),
-('JasonM20210025', 'JasonM20210025', 'Murid'),
-('JesseM20200061', 'JesseM20200061', 'Murid'),
-('JohnM20210034', 'JohnM20210034', 'Murid'),
-('karenM0001', 'karenM0001', 'Murid'),
-('KarinaM20200026', 'KarinaM20200026', 'Murid'),
-('KathP010', 'KathP010', 'Pengajar'),
-('KevinP007', 'KevinP007', 'Pengajar'),
-('LilianaM20210066', 'LilianaM20210066', 'Murid'),
-('MirandaM20210046', 'MirandaM20210046', 'Murid'),
-('NataliaM20200036', 'NataliaM20200036', 'Murid'),
-('NevanM20200053', 'NevanM20200053', 'Murid'),
-('OmenM20200041', 'OmenM20200041', 'Murid'),
-('PeteM20210077', 'PeteM20210077', 'Murid'),
-('RenataP006', 'RenataP006', 'Pengajar'),
-('UdinM20200097', 'UdinM20200097', 'Murid'),
-('UdinM20200123', 'UdinM20200123', 'Murid'),
-('vinchen996', 'Super123', 'Super Admin');
+('DimasP0031', 'DimasP0031', 'Pengajar'),
+('RahmadM0009', 'RahmadM0009', 'Murid'),
+('vinchen996', 'Super123', 'Super Admin'),
+('EkoP002', 'EkoP002', 'Pengajar'),
+('CayadiP003', 'CayadiP003', 'Pengajar'),
+('NoviP004', 'NoviP004', 'Pengajar'),
+('HariP005', 'HariP005', 'Pengajar'),
+('AgnesP006', 'AgnesP006', 'Pengajar'),
+('ZahraP007', 'ZahraP007', 'Pengajar'),
+('RaditP008', 'RaditP008', 'Pengajar'),
+('VictoriaP009', 'VictoriaP009', 'Pengajar'),
+('GambiraP010', 'GambiraP010', 'Pengajar'),
+('AyuM20190018', 'AyuM20190018', 'Murid'),
+('MichelleM20190024', 'MichelleM20190024', 'Murid'),
+('KardiM20190033', 'KardiM20190033', 'Murid'),
+('IkaM20190049', 'IkaM20190049', 'Murid'),
+('JarwaM20200016', 'JarwaM20200016', 'Murid'),
+('ZeldaM20200029', 'ZeldaM20200029', 'Murid'),
+('UlvaM20200034', 'UlvaM20200034', 'Murid'),
+('JaswadiM20200049', 'JaswadiM20200049', 'Murid'),
+('ZulfaM20200054', 'ZulfaM20200054', 'Murid'),
+('PrasetyaM20190058', 'PrasetyaM20190058', 'Murid'),
+('FarhunnisaM20190067', 'FarhunnisaM20190067', 'Murid'),
+('AjimatM20190077', 'AjimatM20190077', 'Murid'),
+('YonoM20190085', 'YonoM20190085', 'Murid'),
+('HafshahM20190092', 'HafshahM20190092', 'Murid'),
+('DianP001', 'DianP001', 'Pengajar');
+
+-- --------------------------------------------------------
 
 --
--- Indexes for dumped tables
+-- Structure for view `murid_terbaik`
 --
+DROP TABLE IF EXISTS `murid_terbaik`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `murid_terbaik`  AS SELECT `murid`.`NIS_Murid` AS `NIS_Murid`, `murid`.`Nama_Murid` AS `Nama_Murid`, count(`bk`.`Grade`) AS `Total_A` FROM (`buku_penghubung` `bk` join `murid` on(`murid`.`NIS_Murid` = `bk`.`NIS_Murid`)) WHERE `bk`.`Grade` = 'A' GROUP BY `murid`.`Nama_Murid` ORDER BY count(`bk`.`Grade`) DESC LIMIT 0, 11  ;
+
+-- --------------------------------------------------------
 
 --
--- Indexes for table `buku_penghubung`
+-- Structure for view `murid_terburuk`
 --
-ALTER TABLE `buku_penghubung`
-  ADD PRIMARY KEY (`ID_Buku`),
-  ADD KEY `NIP_Walikelas` (`ID_Kelas`),
-  ADD KEY `NIS_Murid` (`NIS_Murid`),
-  ADD KEY `ID_Pelajaran` (`ID_Pelajaran`);
+DROP TABLE IF EXISTS `murid_terburuk`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `murid_terburuk`  AS SELECT `murid`.`NIS_Murid` AS `NIS_Murid`, `murid`.`Nama_Murid` AS `Nama_Murid`, count(`bk`.`Grade`) AS `Total_C` FROM (`buku_penghubung` `bk` join `murid` on(`murid`.`NIS_Murid` = `bk`.`NIS_Murid`)) WHERE `bk`.`Grade` = 'C' GROUP BY `murid`.`Nama_Murid` ORDER BY count(`bk`.`Grade`) DESC LIMIT 0, 11  ;
+
+-- --------------------------------------------------------
 
 --
--- Indexes for table `kelas`
+-- Structure for view `murid_termuda_tertua`
 --
-ALTER TABLE `kelas`
-  ADD PRIMARY KEY (`ID_Kelas`),
-  ADD KEY `NIP_Pengajar` (`NIP_Pengajar`);
+DROP TABLE IF EXISTS `murid_termuda_tertua`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `murid_termuda_tertua`  AS SELECT `murid`.`NIS_Murid` AS `NIS_Murid`, `murid`.`username` AS `username`, `murid`.`ID_Kelas` AS `ID_Kelas`, `murid`.`Nama_Murid` AS `Nama_Murid`, `murid`.`Nama_OrangTua` AS `Nama_OrangTua`, `murid`.`Jenis_Kelamin` AS `Jenis_Kelamin`, `murid`.`Tanggal_Lahir` AS `Tanggal_Lahir`, 2023 - year(`murid`.`Tanggal_Lahir`) AS `umur` FROM `murid` WHERE `murid`.`Tanggal_Lahir` = (select min(`murid`.`Tanggal_Lahir`) from `murid`) OR `murid`.`Tanggal_Lahir` = (select max(`murid`.`Tanggal_Lahir`) from `murid`)  ;
+
+-- --------------------------------------------------------
 
 --
--- Indexes for table `murid`
+-- Structure for view `total_jk_pengajar`
 --
-ALTER TABLE `murid`
-  ADD PRIMARY KEY (`NIS_Murid`),
-  ADD KEY `username` (`username`),
-  ADD KEY `ID_Kelas` (`ID_Kelas`);
+DROP TABLE IF EXISTS `total_jk_pengajar`;
 
---
--- Indexes for table `pelajaran`
---
-ALTER TABLE `pelajaran`
-  ADD PRIMARY KEY (`ID_Pelajaran`);
-
---
--- Indexes for table `pengajar`
---
-ALTER TABLE `pengajar`
-  ADD PRIMARY KEY (`NIP_Pengajar`),
-  ADD KEY `Username` (`Username`);
-
---
--- Indexes for table `user`
---
-ALTER TABLE `user`
-  ADD PRIMARY KEY (`username`);
-
---
--- Constraints for dumped tables
---
-
---
--- Constraints for table `buku_penghubung`
---
-ALTER TABLE `buku_penghubung`
-  ADD CONSTRAINT `buku_penghubung_ibfk_2` FOREIGN KEY (`NIS_Murid`) REFERENCES `murid` (`NIS_Murid`),
-  ADD CONSTRAINT `buku_penghubung_ibfk_3` FOREIGN KEY (`ID_Pelajaran`) REFERENCES `pelajaran` (`ID_Pelajaran`),
-  ADD CONSTRAINT `buku_penghubung_ibfk_4` FOREIGN KEY (`ID_Kelas`) REFERENCES `kelas` (`ID_Kelas`);
-
---
--- Constraints for table `kelas`
---
-ALTER TABLE `kelas`
-  ADD CONSTRAINT `kelas_ibfk_1` FOREIGN KEY (`NIP_Pengajar`) REFERENCES `pengajar` (`NIP_Pengajar`);
-
---
--- Constraints for table `murid`
---
-ALTER TABLE `murid`
-  ADD CONSTRAINT `murid_ibfk_1` FOREIGN KEY (`username`) REFERENCES `user` (`username`),
-  ADD CONSTRAINT `murid_ibfk_2` FOREIGN KEY (`ID_Kelas`) REFERENCES `kelas` (`ID_Kelas`);
-
---
--- Constraints for table `pengajar`
---
-ALTER TABLE `pengajar`
-  ADD CONSTRAINT `pengajar_ibfk_1` FOREIGN KEY (`Username`) REFERENCES `user` (`username`);
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `total_jk_pengajar`  AS SELECT `pengajar`.`Jenis_Kelamin` AS `Jenis_Kelamin`, count(0) AS `Total` FROM `pengajar` WHERE `pengajar`.`Jenis_Kelamin` = 'Laki-Laki' OR `pengajar`.`Jenis_Kelamin` = 'Perempuan' GROUP BY `pengajar`.`Jenis_Kelamin``Jenis_Kelamin`  ;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
